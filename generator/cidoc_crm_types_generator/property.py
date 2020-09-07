@@ -2,6 +2,8 @@ from typing import NamedTuple, Optional, Tuple
 
 from rdflib import URIRef
 
+from cidoc_crm_types_generator.property_type import PropertyType
+
 
 class Property(NamedTuple):
     comment: Optional[str]
@@ -11,4 +13,5 @@ class Property(NamedTuple):
     notation: Optional[str]
     range: Optional[URIRef]
     sub_property_of: Tuple[URIRef, ...]
+    type: PropertyType
     uri: URIRef
