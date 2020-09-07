@@ -1,0 +1,34 @@
+version: 2.1
+jobs:
+  generator:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - restore_cache:
+          key: pip-cache
+      - run:
+          name: Install dependencies
+          command: |
+            cd generator
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install -r requirements.txt
+      - run:
+          name: Run tests
+          command: |
+            cd generator
+            mkdir test-results
+            source venv/bin/activate
+            pytest --junitxml=test-results/junit.xml
+      - save_cache:
+          key: pip-cache
+          paths:
+            - ~/.cache/pip
+      - store_test_results:
+          path: generator/test-results
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - generator
