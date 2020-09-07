@@ -1,5 +1,5 @@
 import logging
-from typing import Tuple
+from typing import Dict, Tuple
 
 from rdflib import BNode, Graph, OWL, RDF, RDFS, SKOS, URIRef
 
@@ -45,20 +45,12 @@ class EcrmOwlParser:
     def __check_references(
         self,
         *,
-        entity_classes: Tuple[EntityClass, ...],
-        properties: Tuple[Property, ...],
+        entity_classes_by_uri: Dict[URIRef, EntityClass],
+        properties_by_uri: Dict[URIRef, Property],
     ):
-        entity_classes_by_uri = {
-            entity_class.uri: entity_class for entity_class in entity_classes
-        }
-        assert len(entity_classes_by_uri) == len(entity_classes)
-
-        properties_by_uri = {property.uri: property for property in properties}
-        assert len(properties_by_uri) == len(properties)
-
         dangling_reference = False
 
-        for entity_class in entity_classes:
+        for entity_class in entity_classes_by_uri.values():
             if (
                 entity_class.disjoint_with is not None
                 and entity_class.disjoint_with not in entity_classes_by_uri
@@ -88,7 +80,7 @@ class EcrmOwlParser:
                     )
                     dangling_reference = True
 
-        for property_ in properties:
+        for property_ in properties_by_uri.values():
             if (
                 property_.domain is not None
                 and property_.domain not in entity_classes_by_uri
@@ -137,11 +129,28 @@ class EcrmOwlParser:
     def parse(self, graph: Graph) -> EcrmOwl:
         entity_classes = self.__parse_entity_classes(graph)
         properties = self.__parse_properties(graph)
+
         self.__check_exhaustiveness(
             entity_classes=entity_classes, graph=graph, properties=properties
         )
-        self.__check_references(entity_classes=entity_classes, properties=properties)
-        return EcrmOwl(entity_classes=entity_classes, properties=properties)
+
+        entity_classes_by_uri = {
+            entity_class.uri: entity_class for entity_class in entity_classes
+        }
+        assert len(entity_classes_by_uri) == len(entity_classes)
+
+        properties_by_uri = {property.uri: property for property in properties}
+        assert len(properties_by_uri) == len(properties)
+
+        self.__check_references(
+            entity_classes_by_uri=entity_classes_by_uri,
+            properties_by_uri=properties_by_uri,
+        )
+
+        return EcrmOwl(
+            entity_classes_by_uri=entity_classes_by_uri,
+            properties_by_uri=properties_by_uri,
+        )
 
     def __parse_entity_class(self, *, entity_class_uri: URIRef, graph: Graph):
         comment = None
