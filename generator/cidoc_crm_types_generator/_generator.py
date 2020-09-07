@@ -28,5 +28,12 @@ class _Generator(ABC):
         return self.__logger
 
     @property
-    def _output_dir_path(self):
+    def output_dir_path(self):
         return self.__output_dir_path
+
+    def _write_file(self, file_path: Path, file_contents: str):
+        dir_path = file_path.parent
+        dir_path.mkdir(parents=True, exist_ok=True)
+        with open(file_path, "w+") as file_:
+            file_.write(file_contents.replace("\r\n", "\n"))
+        self._logger.info("wrote %s", file_path)

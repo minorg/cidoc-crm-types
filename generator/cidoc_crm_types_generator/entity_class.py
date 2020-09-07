@@ -16,9 +16,9 @@ class EntityClass(_Model):
     sub_class_of: Tuple[URIRef, ...]
 
     @property
-    def identifier(self):
-        label = self.label
-        if label is None:
-            assert str(self.uri).startswith(str(BASE))
-            label = str(self.uri)[len(str(BASE)) :]
-        return label.replace(" ", "").replace("_", "").replace("-", "")
+    def snake_case_identifier(self):
+        return self._label.replace(" ", "_").replace("-", "_").lower()
+
+    @property
+    def upper_camel_case_identifier(self):
+        return self._label.replace(" ", "").replace("_", "").replace("-", "")

@@ -1,6 +1,7 @@
 import logging
 from argparse import ArgumentParser
 from pathlib import Path
+from shutil import rmtree
 
 from rdflib import Graph
 
@@ -40,7 +41,13 @@ class Main:
         ecrm_owl = EcrmOwlParser().parse(ecrm_owl_graph)
 
         generator_kwds = args.__dict__.copy()
-        for key in ("debug", "ecrm_owl_url", "logging_level", "output_dir_path"):
+        for key in (
+            "clean",
+            "debug",
+            "ecrm_owl_url",
+            "logging_level",
+            "output_dir_path",
+        ):
             try:
                 generator_kwds.pop(key)
             except KeyError:
@@ -76,10 +83,24 @@ class Main:
                 )
 
         for generator in generators:
+            if args.clean and generator.output_dir_path.is_dir():
+                self.__logger.info(
+                    "deleting output directory %s", generator.output_dir_path
+                )
+                rmtree(generator.output_dir_path)
+                self.__logger.info(
+                    "deleted output directory %s", generator.output_dir_path
+                )
+
             generator.generate(ecrm_owl=ecrm_owl)
 
     def __parse_args(self):
         def add_global_arguments(arg_parser: ArgumentParser):
+            arg_parser.add_argument(
+                "--clean",
+                action="store_true",
+                help="delete output directory before filling it",
+            )
             arg_parser.add_argument(
                 "--debug", action="store_true", help="turn on debugging"
             )
