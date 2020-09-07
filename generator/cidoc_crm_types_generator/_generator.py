@@ -34,6 +34,6 @@ class _Generator(ABC):
     def _write_file(self, file_path: Path, file_contents: str):
         dir_path = file_path.parent
         dir_path.mkdir(parents=True, exist_ok=True)
-        with open(file_path, "w+") as file_:
+        with open(file_path, "w+", newline="\n") as file_:
             file_.write(file_contents.replace("\r\n", "\n"))
-        self._logger.info("wrote %s", file_path)
+        self._logger.debug("wrote %s", file_path)

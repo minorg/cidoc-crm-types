@@ -62,7 +62,14 @@ from .entities import *
             imports = []
             if entity_class.sub_class_of:
                 parent_class_names = []
-                for sub_class_of in entity_class.sub_class_of:
+                if entity_class.class_name == "E98Currency":
+                    # E98 currency has an odd inheritance tree, which causes problems for Python:
+                    # Cannot create a consistent method resolution order (MRO) for bases E55Type, E58MeasurementUnit
+                    limit_sub_class_of = [sub_class_of for sub_class_of in entity_class.sub_class_of if entity_classes_by_uri[sub_class_of].class_name == "E58MeasurementUnit"]
+                else:
+                    limit_sub_class_of = entity_class.sub_class_of
+
+                for sub_class_of in limit_sub_class_of:
                     parent_entity_class = entity_classes_by_uri[sub_class_of]
                     parent_class_names.append(parent_entity_class.class_name)
                     imports.append(
@@ -78,7 +85,7 @@ from .entities import *
                 / self._ROOT_MODULE_NAME
                 / self._ENTITIES_MODULE_NAME
                 / (entity_class.module_name + ".py"),
-                f"""
+                f"""\
 from dataclasses import dataclass
 {imports}
 
