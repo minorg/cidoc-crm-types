@@ -21,9 +21,12 @@ class Property(_Model):
     @property
     def identifier(self):
         label = self.label
-        if label is None:
+        if label is not None:
+            label = label.strip()
+        if not label:
             assert str(self.uri).startswith(str(BASE))
             label = str(self.uri)[len(str(BASE)) :]
+            assert label
         snake_case_label = label.replace(" ", "_").replace("-", "_")
         camel_case_label = stringcase.camelcase(snake_case_label)
         return camel_case_label[0].upper() + camel_case_label[1:]
