@@ -1,9 +1,11 @@
 from dataclasses import dataclass
-from typing import NamedTuple, Optional, Tuple
+from typing import Optional, Tuple
 
+import stringcase
 from rdflib import URIRef
 
 from cidoc_crm_types_generator._model import _Model
+from cidoc_crm_types_generator.ecrm_owl_namespace import BASE
 from cidoc_crm_types_generator.property_type import PropertyType
 
 
@@ -15,3 +17,13 @@ class Property(_Model):
     range: Optional[URIRef]
     sub_property_of: Tuple[URIRef, ...]
     type: PropertyType
+
+    @property
+    def identifier(self):
+        label = self.label
+        if label is None:
+            assert str(self.uri).startswith(str(BASE))
+            label = str(self.uri)[len(str(BASE)) :]
+        snake_case_label = label.replace(" ", "_").replace("-", "_")
+        camel_case_label = stringcase.camelcase(snake_case_label)
+        return camel_case_label[0].upper() + camel_case_label[1:]
