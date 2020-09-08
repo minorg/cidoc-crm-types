@@ -23,4 +23,4 @@ In First Order Logic:
 E27(x)? E26(x)
     """
 
-    __typename: str = 'E27Site'
+    _typename: str = 'E27Site'

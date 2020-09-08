@@ -29,4 +29,4 @@ E13(x) ? E7(x)
     P140_assigned_attribute_to: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P141_assigned: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P177_assigned_property_type: Tuple[object, ...] = ()  # Range: E55Type
-    __typename: str = 'E13AttributeAssignment'
+    _typename: str = 'E13AttributeAssignment'

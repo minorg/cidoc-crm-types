@@ -17,4 +17,4 @@ E96(x) ? E8(x)
     """
 
     P179_had_sales_price: Tuple[object, ...] = ()  # Range: E97MonetaryAmount
-    __typename: str = 'E96Purchase'
+    _typename: str = 'E96Purchase'

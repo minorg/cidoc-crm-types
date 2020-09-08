@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class E73InformationObject(E90SymbolicObject, E89PropositionalObject):
+class E73InformationObject(E89PropositionalObject, E90SymbolicObject):
     """
 Scope note:
 This class comprises identifiable immaterial items, such as a poems, jokes, data sets, images, texts, multimedia objects, procedural prescriptions, computer program code, algorithm or mathematical formulae, that have an objectively recognizable structure and are documented as single units. The encoding structure known as a "named graph" also falls under this class, so that each "named graph" is an instance of E73 Information Object.
@@ -26,4 +26,4 @@ E73(x) ? E89(x)
 E73(x) ? E90(x)
     """
 
-    __typename: str = 'E73InformationObject'
+    _typename: str = 'E73InformationObject'

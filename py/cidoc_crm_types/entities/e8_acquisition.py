@@ -30,4 +30,4 @@ E8(x) ? E7(x)
     """
 
     P24_transferred_title_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    __typename: str = 'E8Acquisition'
+    _typename: str = 'E8Acquisition'

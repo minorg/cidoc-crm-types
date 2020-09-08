@@ -20,4 +20,4 @@ In First Order Logic:
 E64(x) ? E5(x)
     """
 
-    __typename: str = 'E64EndofExistence'
+    _typename: str = 'E64EndofExistence'

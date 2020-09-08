@@ -30,4 +30,4 @@ E77(x) ? E1(x)
     P12_was_present_at: Tuple[object, ...] = ()  # Range: E5Event
     P92_was_brought_into_existence_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P93_was_taken_out_of_existence_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    __typename: str = 'E77PersistentItem'
+    _typename: str = 'E77PersistentItem'

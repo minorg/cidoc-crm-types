@@ -140,4 +140,4 @@ E1(x)
     P99_was_dissolved_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P9_consists_of: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P9_forms_part_of: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    __typename: str = 'E1CRMEntity'
+    _typename: str = 'E1CRMEntity'

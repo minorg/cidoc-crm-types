@@ -21,4 +21,4 @@ In First Order Logic:
 E85(x) ? E7(x)
     """
 
-    __typename: str = 'E85Joining'
+    _typename: str = 'E85Joining'

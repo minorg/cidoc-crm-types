@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class E22ManMadeObject(E19PhysicalObject, E24PhysicalManMadeThing):
+class E22ManMadeObject(E24PhysicalManMadeThing, E19PhysicalObject):
     """
 Scope note:
 This class comprises physical objects purposely created by human activity.
@@ -23,4 +23,4 @@ E22(x) ? E19(x)
 E22(x) ? E24(x)
     """
 
-    __typename: str = 'E22ManMadeObject'
+    _typename: str = 'E22ManMadeObject'

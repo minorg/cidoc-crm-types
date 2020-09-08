@@ -23,4 +23,4 @@ In First Order Logic:
 E15(x) ? E13(x)
     """
 
-    __typename: str = 'E15IdentifierAssignment'
+    _typename: str = 'E15IdentifierAssignment'

@@ -23,4 +23,4 @@ E87(x) ? E7(x)
     """
 
     P147_curated: Tuple[object, ...] = ()  # Range: E78Collection
-    __typename: str = 'E87CurationActivity'
+    _typename: str = 'E87CurationActivity'

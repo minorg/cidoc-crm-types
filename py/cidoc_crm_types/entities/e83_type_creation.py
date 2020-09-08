@@ -20,4 +20,4 @@ In First Order Logic:
 E83(x) ? E65(x)
     """
 
-    __typename: str = 'E83TypeCreation'
+    _typename: str = 'E83TypeCreation'

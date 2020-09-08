@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class E25ManMadeFeature(E26PhysicalFeature, E24PhysicalManMadeThing):
+class E25ManMadeFeature(E24PhysicalManMadeThing, E26PhysicalFeature):
     """
 Scope note:
 This class comprises physical features that are purposely created by human activity, such as scratches, artificial caves, artificial water channels, etc. In particular, it includes the information encoding features on mechanical or digital carriers.
@@ -24,4 +24,4 @@ E25(x) ? E26(x)
 E25(x) ? E24(x)
     """
 
-    __typename: str = 'E25ManMadeFeature'
+    _typename: str = 'E25ManMadeFeature'

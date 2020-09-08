@@ -35,4 +35,4 @@ In First Order Logic:
 E28(x) ? E71(x)
     """
 
-    __typename: str = 'E28ConceptualObject'
+    _typename: str = 'E28ConceptualObject'

@@ -5,7 +5,7 @@ from typing import Tuple
 
 
 @dataclass
-class E4Period(E2TemporalEntity, E92SpacetimeVolume):
+class E4Period(E92SpacetimeVolume, E2TemporalEntity):
     """
 Scope note:
 This class comprises sets of coherent phenomena or cultural manifestations occurring in time and space.
@@ -46,4 +46,4 @@ E4(x) ? E92(x)
 
     P7_took_place_at: Tuple[object, ...] = ()  # Range: E53Place
     P8_took_place_on_or_within: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    __typename: str = 'E4Period'
+    _typename: str = 'E4Period'

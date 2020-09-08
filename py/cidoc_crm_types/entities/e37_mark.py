@@ -22,4 +22,4 @@ In First Order Logic:
 E37(x) ? E36(x)
     """
 
-    __typename: str = 'E37Mark'
+    _typename: str = 'E37Mark'

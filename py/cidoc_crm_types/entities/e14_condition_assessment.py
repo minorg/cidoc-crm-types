@@ -19,4 +19,4 @@ In First Order Logic:
 E14(x) ? E13(x)
     """
 
-    __typename: str = 'E14ConditionAssessment'
+    _typename: str = 'E14ConditionAssessment'

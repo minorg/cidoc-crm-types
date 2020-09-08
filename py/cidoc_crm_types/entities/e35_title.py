@@ -26,4 +26,4 @@ E35(x) ? E33(x)
 E35(x) ? E41(x)
     """
 
-    __typename: str = 'E35Title'
+    _typename: str = 'E35Title'

@@ -27,4 +27,4 @@ E78(x) ? E24(x)
     """
 
     P147_was_curated_by: Tuple[object, ...] = ()  # Range: E87CurationActivity
-    __typename: str = 'E78Collection'
+    _typename: str = 'E78Collection'

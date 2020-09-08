@@ -20,4 +20,4 @@ E98(x) ? E55(x)
 E98(x) ? E58(x)
     """
 
-    __typename: str = 'E98Currency'
+    _typename: str = 'E98Currency'

@@ -26,4 +26,4 @@ In First Order Logic:
 E26(x) ? E18(x)
     """
 
-    __typename: str = 'E26PhysicalFeature'
+    _typename: str = 'E26PhysicalFeature'

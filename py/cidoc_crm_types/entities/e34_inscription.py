@@ -25,4 +25,4 @@ E34(x) ? E33(x)
 E34(x) ? E37(x)
     """
 
-    __typename: str = 'E34Inscription'
+    _typename: str = 'E34Inscription'

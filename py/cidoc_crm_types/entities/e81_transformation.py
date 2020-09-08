@@ -21,4 +21,4 @@ E81(x) ? E63(x)
 E81(x) ? E64(x)
     """
 
-    __typename: str = 'E81Transformation'
+    _typename: str = 'E81Transformation'

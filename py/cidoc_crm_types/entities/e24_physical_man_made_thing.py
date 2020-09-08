@@ -5,7 +5,7 @@ from typing import Tuple
 
 
 @dataclass
-class E24PhysicalManMadeThing(E71ManMadeThing, E18PhysicalThing):
+class E24PhysicalManMadeThing(E18PhysicalThing, E71ManMadeThing):
     """
 Scope note:
 This class comprises all persistent physical items of any size that are purposely created by human activity. This class comprises, besides others, Human-Made objects, such as a swords, and Human-Made features, such as rock art. For example, a ?cup and ring? carving on bedrock is regarded as instance of E24 Physical Human-Made Thing.
@@ -30,4 +30,4 @@ E24(x) ? E71(x)
     """
 
     P62_depicts: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    __typename: str = 'E24PhysicalManMadeThing'
+    _typename: str = 'E24PhysicalManMadeThing'

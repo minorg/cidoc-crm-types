@@ -21,4 +21,4 @@ E67(x) ? E63(x)
     """
 
     P97_from_father: Tuple[object, ...] = ()  # Range: E21Person
-    __typename: str = 'E67Birth'
+    _typename: str = 'E67Birth'

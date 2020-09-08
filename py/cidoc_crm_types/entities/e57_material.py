@@ -31,4 +31,4 @@ E57(x) ? E55(x)
     P126_was_employed_in: Tuple[object, ...] = ()  # Range: E11Modification
     P45_is_incorporated_in: Tuple[object, ...] = ()  # Range: E18PhysicalThing
     P68_use_foreseen_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    __typename: str = 'E57Material'
+    _typename: str = 'E57Material'

@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class E65Creation(E63BeginningofExistence, E7Activity):
+class E65Creation(E7Activity, E63BeginningofExistence):
     """
 Scope note:
 This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc.
@@ -20,4 +20,4 @@ E65(x) ? E7(x)
 E65(x) ? E63(x)
     """
 
-    __typename: str = 'E65Creation'
+    _typename: str = 'E65Creation'

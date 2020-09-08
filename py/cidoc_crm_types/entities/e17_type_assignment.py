@@ -19,4 +19,4 @@ In First Order Logic:
 E17(x) ? E13(x)
     """
 
-    __typename: str = 'E17TypeAssignment'
+    _typename: str = 'E17TypeAssignment'

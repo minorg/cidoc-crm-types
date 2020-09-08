@@ -21,4 +21,4 @@ In First Order Logic:
 E86(x) ? E7(x)
     """
 
-    __typename: str = 'E86Leaving'
+    _typename: str = 'E86Leaving'

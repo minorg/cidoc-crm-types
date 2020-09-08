@@ -23,4 +23,4 @@ E72(x) ? E70(x)
 
     P104_is_subject_to: Tuple[object, ...] = ()  # Range: E30Right
     P105_right_held_by: Tuple[object, ...] = ()  # Range: E39Actor
-    __typename: str = 'E72LegalObject'
+    _typename: str = 'E72LegalObject'

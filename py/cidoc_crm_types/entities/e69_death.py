@@ -19,4 +19,4 @@ In First Order Logic:
 E69(x) ? E64(x)
     """
 
-    __typename: str = 'E69Death'
+    _typename: str = 'E69Death'

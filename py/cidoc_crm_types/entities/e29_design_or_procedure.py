@@ -33,4 +33,4 @@ E29(x) ? E73(x)
     P187i_is_production_plan_for: Tuple[object, ...] = ()  # Range: E99ProductType
     P69_has_association_with: Tuple[object, ...] = ()  # Range: E29DesignorProcedure
     P69_is_associated_with: Tuple[object, ...] = ()  # Range: E29DesignorProcedure
-    __typename: str = 'E29DesignorProcedure'
+    _typename: str = 'E29DesignorProcedure'

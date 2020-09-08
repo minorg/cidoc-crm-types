@@ -30,4 +30,4 @@ E89(x) ? E28(x)
     P148_has_component: Tuple[object, ...] = ()  # Range: E89PropositionalObject
     P148_is_component_of: Tuple[object, ...] = ()  # Range: E89PropositionalObject
     P67_refers_to: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    __typename: str = 'E89PropositionalObject'
+    _typename: str = 'E89PropositionalObject'

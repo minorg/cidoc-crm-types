@@ -39,4 +39,4 @@ E55(x) ? E28(x)
     P2_is_type_of: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P32_was_technique_of: Tuple[object, ...] = ()  # Range: E7Activity
     P42_was_assigned_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    __typename: str = 'E55Type'
+    _typename: str = 'E55Type'

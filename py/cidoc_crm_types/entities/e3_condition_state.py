@@ -27,4 +27,4 @@ E3(x) ? E2(x)
     P44_is_condition_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
     P5_consists_of: Tuple[object, ...] = ()  # Range: E3ConditionState
     P5_forms_part_of: Tuple[object, ...] = ()  # Range: E3ConditionState
-    __typename: str = 'E3ConditionState'
+    _typename: str = 'E3ConditionState'

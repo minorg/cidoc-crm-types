@@ -30,4 +30,4 @@ E92(x) ? E1(x)
     P166i_had_presence: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P169i_spacetime_volume_is_defined_by: Tuple[object, ...] = ()  # Range: object
     P196i_is_defined_by: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    __typename: str = 'E92SpacetimeVolume'
+    _typename: str = 'E92SpacetimeVolume'

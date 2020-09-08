@@ -38,4 +38,4 @@ E2(x) ? E1(x)
     P185_ends_before_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
     P185i_ends_after_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
     P4_has_time_span: Tuple[object, ...] = ()  # Range: E52TimeSpan
-    __typename: str = 'E2TemporalEntity'
+    _typename: str = 'E2TemporalEntity'

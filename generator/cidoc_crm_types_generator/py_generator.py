@@ -78,6 +78,7 @@ from .entities import *
                 fields.append(f"    {effective_property.snake_case_identifier}: Tuple[object, ...] = ()  # Range: {range_py_type}")
             if fields:
                 imports.add("from typing import Tuple")
+            fields.append(f"    _typename: str = '{entity_class.upper_camel_case_identifier}'")
             fields = "\n".join(sorted(list(set(fields))))
             imports = "\n".join(sorted(list(set(imports))))
 

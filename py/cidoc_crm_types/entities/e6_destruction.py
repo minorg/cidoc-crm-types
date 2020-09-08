@@ -26,4 +26,4 @@ In First Order Logic:
 E6(x) ? E64(x)
     """
 
-    __typename: str = 'E6Destruction'
+    _typename: str = 'E6Destruction'

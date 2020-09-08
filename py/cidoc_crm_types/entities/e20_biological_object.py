@@ -22,4 +22,4 @@ In First Order Logic:
 E20(x) ? E19(x)
     """
 
-    __typename: str = 'E20BiologicalObject'
+    _typename: str = 'E20BiologicalObject'

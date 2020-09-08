@@ -48,4 +48,4 @@ E53(x) ? E1(x)
     P7_witnessed: Tuple[object, ...] = ()  # Range: E4Period
     P89_contains: Tuple[object, ...] = ()  # Range: E53Place
     P89_falls_within: Tuple[object, ...] = ()  # Range: E53Place
-    __typename: str = 'E53Place'
+    _typename: str = 'E53Place'

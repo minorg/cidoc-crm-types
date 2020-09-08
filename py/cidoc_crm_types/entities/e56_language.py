@@ -27,4 +27,4 @@ E56(x) ? E55(x)
     """
 
     P72_is_language_of: Tuple[object, ...] = ()  # Range: E33LinguisticObject
-    __typename: str = 'E56Language'
+    _typename: str = 'E56Language'

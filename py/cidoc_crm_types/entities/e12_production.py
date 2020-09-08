@@ -27,4 +27,4 @@ E12(x) ? E63(x)
     """
 
     P186_produced_thing_of_product_type: Tuple[object, ...] = ()  # Range: E99ProductType
-    __typename: str = 'E12Production'
+    _typename: str = 'E12Production'

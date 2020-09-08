@@ -29,4 +29,4 @@ E58(x) ? E55(x)
     """
 
     P91_is_unit_of: Tuple[object, ...] = ()  # Range: E54Dimension
-    __typename: str = 'E58MeasurementUnit'
+    _typename: str = 'E58MeasurementUnit'
