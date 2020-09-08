@@ -59,7 +59,7 @@ from .entities import *
             else:
                 parent_class_names = ""
 
-            entity_class_properties = [property_ for property_ in effective_properties if property_.domain == entity_class.uri]
+            # entity_class_properties = [property_ for property_ in effective_properties if property_.domain == entity_class.uri]
 
             fields = []
             for effective_property in effective_properties:
@@ -81,6 +81,15 @@ from .entities import *
             fields = "\n".join(sorted(list(set(fields))))
             imports = "\n".join(sorted(list(set(imports))))
 
+            if entity_class.comment:
+                comment = f'''
+    """
+{entity_class.comment.encode("ascii", "replace").decode("ascii")}
+    """
+'''
+            else:
+                comment = ''
+
             self._write_file(
                 self.output_dir_path
                 / self._ROOT_MODULE_NAME
@@ -91,7 +100,7 @@ from .entities import *
 
 
 @dataclass
-class {entity_class.upper_camel_case_identifier}{parent_class_names}:
+class {entity_class.upper_camel_case_identifier}{parent_class_names}:{comment}
 {fields}
 """,
             )
