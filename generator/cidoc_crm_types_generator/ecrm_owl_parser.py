@@ -50,6 +50,8 @@ class EcrmOwlParser:
     ):
         dangling_reference = False
 
+        effective_properties = [property_.effective_property(properties_by_uri=properties_by_uri) for property_ in properties_by_uri.values()]
+
         for entity_class in entity_classes_by_uri.values():
             if (
                 entity_class.disjoint_with is not None
@@ -62,12 +64,32 @@ class EcrmOwlParser:
                 )
                 dangling_reference = True
 
+            # Find the properties this entity class is in the domain of
+            entity_class_effective_properties = []
+            for effective_property in effective_properties:
+                if entity_class.is_sub_class_of(entity_classes_by_uri=entity_classes_by_uri, parent_entity_class_uri=effective_property.domain):
+                    entity_class_effective_properties.append(effective_property)
+
+            # Check that all of an entity's property type restrictions are on those properties
             for property_restriction in entity_class.property_restrictions:
                 if property_restriction.on_property not in properties_by_uri:
                     self.__logger.error(
-                        "entity class %s has property restriction on missing property %s",
+                        "entity class %s has a property restriction on missing property %s",
                         entity_class.uri,
                         property_restriction.on_property,
+                    )
+                    dangling_reference = True
+
+                found_effective_property = False
+                for entity_class_effective_property in entity_class_effective_properties:
+                    if entity_class_effective_property.uri == property_restriction.on_property:
+                        found_effective_property = True
+                        break
+                if not found_effective_property:
+                    self.__logger.error(
+                        "entity class %s has a property restriction on a property (%s) for which the entity class is not in the domain",
+                        entity_class.uri,
+                        property_restriction.on_property
                     )
                     dangling_reference = True
 
