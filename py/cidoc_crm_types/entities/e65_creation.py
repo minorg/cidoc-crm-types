@@ -20,4 +20,4 @@ E65(x) ? E7(x)
 E65(x) ? E63(x)
     """
 
-
+    __typename: str = 'E65Creation'

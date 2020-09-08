@@ -23,3 +23,4 @@ E30(x) ? E89(x
 
     P104_applies_to: Tuple[object, ...] = ()  # Range: E72LegalObject
     P75_is_possessed_by: Tuple[object, ...] = ()  # Range: E39Actor
+    __typename: str = 'E30Right'

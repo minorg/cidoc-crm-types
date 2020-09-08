@@ -19,4 +19,4 @@ In First Order Logic:
 E32(x) ? E31(x)
     """
 
-
+    __typename: str = 'E32AuthorityDocument'

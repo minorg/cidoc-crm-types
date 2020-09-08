@@ -28,3 +28,4 @@ E11(x) ? E7(x)
     """
 
     P126_employed: Tuple[object, ...] = ()  # Range: E57Material
+    __typename: str = 'E11Modification'

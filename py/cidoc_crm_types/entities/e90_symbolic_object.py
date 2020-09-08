@@ -33,3 +33,4 @@ E90(x) ? E72(x)
     P106_is_composed_of: Tuple[object, ...] = ()  # Range: E90SymbolicObject
     P165i_is_incorporated_in: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P190_has_symbolic_content: Tuple[object, ...] = ()  # Range: object
+    __typename: str = 'E90SymbolicObject'

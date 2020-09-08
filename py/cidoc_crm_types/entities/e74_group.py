@@ -33,3 +33,4 @@ E74(x) ? E39(x)
     """
 
     P107_has_current_or_former_member: Tuple[object, ...] = ()  # Range: E39Actor
+    __typename: str = 'E74Group'

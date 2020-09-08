@@ -23,3 +23,4 @@ E9(x) ? E7(x)
 
     P26_moved_to: Tuple[object, ...] = ()  # Range: E53Place
     P27_moved_from: Tuple[object, ...] = ()  # Range: E53Place
+    __typename: str = 'E9Move'

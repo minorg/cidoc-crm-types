@@ -18,3 +18,4 @@ E93(x) ? E92(x)
 
     P167_at: Tuple[object, ...] = ()  # Range: E53Place
     P195_was_presence_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
+    __typename: str = 'E93SpacetimeSnapshot'

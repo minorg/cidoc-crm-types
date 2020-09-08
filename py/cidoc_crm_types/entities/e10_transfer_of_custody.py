@@ -31,3 +31,4 @@ E10(x) ? E7(x)
     """
 
     P30_transferred_custody_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
+    __typename: str = 'E10TransferofCustody'

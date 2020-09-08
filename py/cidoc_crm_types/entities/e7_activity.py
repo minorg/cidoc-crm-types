@@ -34,3 +34,4 @@ E7(x) ? E5(x)
     P20_had_specific_purpose: Tuple[object, ...] = ()  # Range: E5Event
     P21_had_general_purpose: Tuple[object, ...] = ()  # Range: E55Type
     P32_used_general_technique: Tuple[object, ...] = ()  # Range: E55Type
+    __typename: str = 'E7Activity'

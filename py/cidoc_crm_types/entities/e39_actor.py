@@ -30,3 +30,4 @@ E39(x) ? E77(x)
     P74_has_current_or_former_residence: Tuple[object, ...] = ()  # Range: E53Place
     P75_possesses: Tuple[object, ...] = ()  # Range: E30Right
     P76_has_contact_point: Tuple[object, ...] = ()  # Range: E41Appellation
+    __typename: str = 'E39Actor'

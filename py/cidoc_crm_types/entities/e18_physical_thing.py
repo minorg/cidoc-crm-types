@@ -41,3 +41,4 @@ E18(x) ? E72(x)
     P53_has_former_or_current_location: Tuple[object, ...] = ()  # Range: E53Place
     P59_has_section: Tuple[object, ...] = ()  # Range: E53Place
     P8_witnessed: Tuple[object, ...] = ()  # Range: E4Period
+    __typename: str = 'E18PhysicalThing'

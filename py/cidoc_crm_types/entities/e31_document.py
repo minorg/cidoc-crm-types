@@ -21,4 +21,4 @@ In First Order Logic:
 E31(x) ? E73(x)
     """
 
-
+    __typename: str = 'E31Document'

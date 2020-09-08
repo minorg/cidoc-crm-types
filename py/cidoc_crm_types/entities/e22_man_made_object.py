@@ -23,4 +23,4 @@ E22(x) ? E19(x)
 E22(x) ? E24(x)
     """
 
-
+    __typename: str = 'E22ManMadeObject'

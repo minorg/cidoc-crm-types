@@ -29,3 +29,4 @@ E70(x) ? E77(x)
     P130_features_are_also_found_on: Tuple[object, ...] = ()  # Range: E70Thing
     P130_shows_features_of: Tuple[object, ...] = ()  # Range: E70Thing
     P43_has_dimension: Tuple[object, ...] = ()  # Range: E54Dimension
+    __typename: str = 'E70Thing'

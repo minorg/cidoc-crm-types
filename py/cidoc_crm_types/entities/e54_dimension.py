@@ -34,3 +34,4 @@ E54(x) ? E1(x)
     P43_is_dimension_of: Tuple[object, ...] = ()  # Range: E70Thing
     P90_has_value: Tuple[object, ...] = ()  # Range: object
     P91_has_unit: Tuple[object, ...] = ()  # Range: E58MeasurementUnit
+    __typename: str = 'E54Dimension'

@@ -34,3 +34,4 @@ E5(x) ? E4(x)
     P11_had_participant: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P12_occurred_in_the_presence_of: Tuple[object, ...] = ()  # Range: E77PersistentItem
     P20_was_purpose_of: Tuple[object, ...] = ()  # Range: E7Activity
+    __typename: str = 'E5Event'

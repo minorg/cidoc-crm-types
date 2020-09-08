@@ -31,3 +31,4 @@ E42(x) ? E41(x)
 
     P37_was_assigned_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
     P38_was_deassigned_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
+    __typename: str = 'E42Identifier'

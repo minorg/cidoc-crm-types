@@ -24,4 +24,4 @@ In First Order Logic:
 E36(x) ? E73(x)
     """
 
-
+    __typename: str = 'E36VisualItem'

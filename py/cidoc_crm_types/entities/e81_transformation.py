@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class E81Transformation(E63BeginningofExistence, E64EndofExistence):
+class E81Transformation(E64EndofExistence, E63BeginningofExistence):
     """
 Scope note:
 This class comprises the events that result in the simultaneous destruction of one or more than one instance of E18 Physical Thing and the creation of one or more than one instance of E18 Physical Thing that preserves recognizable substance and structure from the first one(s) but has fundamentally different nature or identity.
@@ -21,4 +21,4 @@ E81(x) ? E63(x)
 E81(x) ? E64(x)
     """
 
-
+    __typename: str = 'E81Transformation'

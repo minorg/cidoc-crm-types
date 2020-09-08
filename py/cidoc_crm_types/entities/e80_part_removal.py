@@ -21,4 +21,4 @@ In First Order Logic:
 E80(x) ? E11(x)
     """
 
-
+    __typename: str = 'E80PartRemoval'

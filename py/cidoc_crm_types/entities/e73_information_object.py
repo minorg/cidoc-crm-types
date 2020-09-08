@@ -26,4 +26,4 @@ E73(x) ? E89(x)
 E73(x) ? E90(x)
     """
 
-
+    __typename: str = 'E73InformationObject'

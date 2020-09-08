@@ -41,3 +41,4 @@ E52(x) ? E1(x)
     P82_at_some_time_within: Tuple[object, ...] = ()  # Range: object
     P86_contains: Tuple[object, ...] = ()  # Range: E52TimeSpan
     P86_falls_within: Tuple[object, ...] = ()  # Range: E52TimeSpan
+    __typename: str = 'E52TimeSpan'

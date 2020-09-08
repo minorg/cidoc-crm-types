@@ -46,3 +46,4 @@ E4(x) ? E92(x)
 
     P7_took_place_at: Tuple[object, ...] = ()  # Range: E53Place
     P8_took_place_on_or_within: Tuple[object, ...] = ()  # Range: E18PhysicalThing
+    __typename: str = 'E4Period'

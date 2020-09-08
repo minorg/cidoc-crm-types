@@ -28,3 +28,4 @@ E21(x) ? E39(x)
     P152_has_parent: Tuple[object, ...] = ()  # Range: E21Person
     P152_is_parent_of: Tuple[object, ...] = ()  # Range: E21Person
     P97_was_father_for: Tuple[object, ...] = ()  # Range: E67Birth
+    __typename: str = 'E21Person'

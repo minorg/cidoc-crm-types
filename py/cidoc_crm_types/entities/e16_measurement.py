@@ -25,4 +25,4 @@ In First Order Logic:
 E16(x) ? E13(x)
     """
 
-
+    __typename: str = 'E16Measurement'

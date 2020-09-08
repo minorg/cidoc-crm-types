@@ -23,4 +23,4 @@ E66(x) ? E7(x)
 E66(x) ? E63(x)
     """
 
-
+    __typename: str = 'E66Formation'

@@ -20,4 +20,4 @@ In First Order Logic:
 E68(x) ? E64(x)
     """
 
-
+    __typename: str = 'E68Dissolution'

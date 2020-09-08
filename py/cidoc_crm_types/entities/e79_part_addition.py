@@ -20,4 +20,4 @@ In First Order Logic:
 E79(x) ? E11(x)
     """
 
-
+    __typename: str = 'E79PartAddition'
