@@ -92,9 +92,17 @@ class Property(_Model):
         kwds["range"] = range
         return self.__class__(**kwds)
 
+    def is_sub_property_of(self, *, properties_by_uri, parent_property_uri: URIRef):
+        if self.uri == parent_property_uri:
+            return True
+        for sub_property_of in self.sub_property_of:
+            if properties_by_uri[sub_property_of].is_sub_property_of(parent_property_uri=parent_property_uri, properties_by_uri=properties_by_uri):
+                return True
+        return False
+
     @property
     def snake_case_identifier(self):
-        return self._label.replace(" ", "_").replace("-", "_")
+        return self._uri_identifier.replace(" ", "_").replace("-", "_").lower()
 
     @property
     def upper_camel_case_identifier(self):

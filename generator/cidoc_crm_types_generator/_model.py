@@ -13,12 +13,6 @@ class _Model:
     uri: URIRef
 
     @property
-    def _label(self):
-        label = self.label
-        if label is not None:
-            label = label.strip()
-        if not label:
-            assert str(self.uri).startswith(str(BASE))
-            label = str(self.uri)[len(str(BASE)) :]
-            assert label
-        return label
+    def _uri_identifier(self):
+        assert str(self.uri).startswith(str(BASE))
+        return str(self.uri)[len(str(BASE)) :]

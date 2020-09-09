@@ -9,5 +9,5 @@ def test_generate(ecrm_owl: EcrmOwl, tmpdir):
     import sys
     sys.path.append(str(tmpdir))
     import cidoc_crm_types
-    currency = cidoc_crm_types.E98Currency()
-    assert currency._typename == "E98Currency"
+    cidoc_crm_types.E98Currency()
+    cidoc_crm_types.P29CustodyReceivedBy()

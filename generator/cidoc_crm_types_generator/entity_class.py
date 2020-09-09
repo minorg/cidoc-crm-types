@@ -25,8 +25,8 @@ class EntityClass(_Model):
 
     @property
     def snake_case_identifier(self):
-        return self._label.replace(" ", "_").replace("-", "_").lower()
+        return self._uri_identifier.replace(" ", "_").replace("-", "_").lower()
 
     @property
     def upper_camel_case_identifier(self):
-        return self._label.replace(" ", "").replace("_", "").replace("-", "")
+        return self._uri_identifier.replace(" ", "").replace("_", "").replace("-", "")

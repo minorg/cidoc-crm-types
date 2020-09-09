@@ -1,6 +1,3 @@
-import dataclasses
-from dataclasses import dataclass
-from pathlib import Path
 from typing import Dict
 
 from rdflib import URIRef
@@ -9,23 +6,25 @@ from cidoc_crm_types_generator._generator import _Generator
 from cidoc_crm_types_generator.ecrm_owl import EcrmOwl
 from cidoc_crm_types_generator.entity_class import EntityClass
 from cidoc_crm_types_generator.property import Property
-from cidoc_crm_types_generator.property_type import PropertyType
 
 
 class PyGenerator(_Generator):
     _ROOT_MODULE_NAME = "cidoc_crm_types"
     _ENTITIES_MODULE_NAME = "entities"
+    _PROPERTIES_MODULE_NAME = "properties"
 
     def generate(self, *, ecrm_owl: EcrmOwl):
         self.__generate_entity_classes(
             entity_classes_by_uri=ecrm_owl.entity_classes_by_uri,
             properties_by_uri=ecrm_owl.properties_by_uri,
         )
+        self.__generate_properties(entity_classes_by_uri=ecrm_owl.entity_classes_by_uri, properties_by_uri=ecrm_owl.properties_by_uri)
 
         self._write_file(
             self.output_dir_path / self._ROOT_MODULE_NAME / "__init__.py",
             """\
 from .entities import *
+from .properties import *
 """,
         )
 
@@ -35,21 +34,26 @@ from .entities import *
         entity_classes_by_uri: Dict[URIRef, EntityClass],
         properties_by_uri: Dict[URIRef, Property],
     ):
-        effective_properties = [property_.effective_property(properties_by_uri=properties_by_uri) for property_ in properties_by_uri.values()]
-
         init_imports = []
         for entity_class in entity_classes_by_uri.values():
             imports = {"from dataclasses import dataclass"}
             if entity_class.sub_class_of:
-                parent_class_names = []
-                if entity_class.upper_camel_case_identifier == "E98Currency":
-                    # E98 currency has an odd inheritance tree, which causes problems for Python:
-                    # Cannot create a consistent method resolution order (MRO) for bases E55Type, E58MeasurementUnit
-                    limit_sub_class_of = [sub_class_of for sub_class_of in entity_class.sub_class_of if entity_classes_by_uri[sub_class_of].upper_camel_case_identifier == "E58MeasurementUnit"]
+                if len(entity_class.sub_class_of) == 1:
+                    parent_entity_class_uris = entity_class.sub_class_of
                 else:
-                    limit_sub_class_of = entity_class.sub_class_of
+                    # Eliminate the case where a child property is declared a subClassOf its parent and grandparent
+                    parent_entity_class_uris = []
+                    for sub_class_of_i, sub_class_of in enumerate(entity_class.sub_class_of):
+                        for other_sub_class_of_i, other_sub_class_of in enumerate(entity_class.sub_class_of):
+                            if other_sub_class_of_i == sub_class_of_i:
+                                continue
+                            if entity_classes_by_uri[sub_class_of].is_sub_class_of(parent_entity_class_uri=other_sub_class_of, entity_classes_by_uri=entity_classes_by_uri):
+                                self._logger.debug("entity class %s: parent %s is a child of other parent %s, skipping %s", entity_class.uri, sub_class_of, other_sub_class_of, other_sub_class_of)
+                                continue
+                            parent_entity_class_uris.append(sub_class_of)
 
-                for sub_class_of in limit_sub_class_of:
+                parent_class_names = []
+                for sub_class_of in parent_entity_class_uris:
                     parent_entity_class = entity_classes_by_uri[sub_class_of]
                     parent_class_names.append(parent_entity_class.upper_camel_case_identifier)
                     imports.add(
@@ -59,33 +63,12 @@ from .entities import *
             else:
                 parent_class_names = ""
 
-            # entity_class_properties = [property_ for property_ in effective_properties if property_.domain == entity_class.uri]
-
-            fields = []
-            for effective_property in effective_properties:
-                if effective_property.domain != entity_class.uri:
-                    # The domain can be a superclass of this entity class, but then the field for that property will be in the Python superclass.
-                    continue
-
-                # Don't try to do range, get circular imports
-                if effective_property.type == PropertyType.DATATYPE:
-                    range_py_type = "object"
-                    assert effective_property.range is None
-                else:
-                    range_py_type = entity_classes_by_uri[effective_property.range].upper_camel_case_identifier
-
-                # Don't try to actually declare the range type, leads to circular imports
-                fields.append(f"    {effective_property.snake_case_identifier}: Tuple[object, ...] = ()  # Range: {range_py_type}")
-            if fields:
-                imports.add("from typing import Tuple")
-            fields.append(f"    _typename: str = '{entity_class.upper_camel_case_identifier}'")
-            fields = "\n".join(sorted(list(set(fields))))
             imports = "\n".join(sorted(list(set(imports))))
 
             if entity_class.comment:
                 comment = f'''
     """
-{entity_class.comment.encode("ascii", "replace").decode("ascii")}
+{entity_class.comment.encode("ascii", "xmlcharrefreplace").decode("ascii")}
     """
 '''
             else:
@@ -102,7 +85,7 @@ from .entities import *
 
 @dataclass
 class {entity_class.upper_camel_case_identifier}{parent_class_names}:{comment}
-{fields}
+    TYPE_URI = "{entity_class.uri}"
 """,
             )
             init_imports.append(
@@ -116,3 +99,75 @@ class {entity_class.upper_camel_case_identifier}{parent_class_names}:{comment}
             / "__init__.py",
             "\n".join(init_imports),
         )
+
+    def __generate_properties(
+            self,
+            *,
+            entity_classes_by_uri: Dict[URIRef, EntityClass],
+            properties_by_uri: Dict[URIRef, Property],
+    ):
+        init_imports = []
+        for property_ in properties_by_uri.values():
+            imports = {"from dataclasses import dataclass"}
+            if property_.sub_property_of:
+                if len(property_.sub_property_of) == 1:
+                    parent_property_uris = property_.sub_property_of
+                else:
+                    # Eliminate the case where a child property is declared a subPropertyOf its parent and grandparent
+                    parent_property_uris = []
+                    for sub_property_of_i, sub_property_of in enumerate(property_.sub_property_of):
+                        for other_sub_property_of_i, other_sub_property_of in enumerate(property_.sub_property_of):
+                            if other_sub_property_of_i == sub_property_of_i:
+                                continue
+                            if properties_by_uri[sub_property_of].is_sub_property_of(parent_property_uri=other_sub_property_of, properties_by_uri=properties_by_uri):
+                                self._logger.debug("property %s: parent %s is a child of other parent %s, skipping %s", property_.uri, sub_property_of, other_sub_property_of, other_sub_property_of)
+                                continue
+                            parent_property_uris.append(sub_property_of)
+
+                parent_class_names = []
+                for sub_property_of in parent_property_uris:
+                    parent_property_ = properties_by_uri[sub_property_of]
+                    parent_class_names.append(parent_property_.upper_camel_case_identifier)
+                    imports.add(
+                        f"from .{parent_property_.snake_case_identifier} import {parent_property_.upper_camel_case_identifier}"
+                    )
+                parent_class_names = f"({', '.join(parent_class_names)})"
+            else:
+                parent_class_names = ""
+
+            imports = "\n".join(sorted(list(set(imports))))
+
+            if property_.comment:
+                comment = f'''
+    """
+{property_.comment.encode("ascii", "xmlcharrefreplace").decode("ascii")}
+    """
+'''
+            else:
+                comment = ''
+
+            self._write_file(
+                self.output_dir_path
+                / self._ROOT_MODULE_NAME
+                / self._PROPERTIES_MODULE_NAME
+                / (property_.snake_case_identifier + ".py"),
+                f"""\
+{imports}
+
+
+@dataclass
+class {property_.upper_camel_case_identifier}{parent_class_names}:{comment}
+    URI = "{property_.uri}"
+""",
+                )
+            init_imports.append(
+                f"from .{property_.snake_case_identifier} import {property_.upper_camel_case_identifier}"
+            )
+
+        self._write_file(
+            self.output_dir_path
+            / self._ROOT_MODULE_NAME
+            / self._PROPERTIES_MODULE_NAME
+            / "__init__.py",
+            "\n".join(init_imports),
+            )
