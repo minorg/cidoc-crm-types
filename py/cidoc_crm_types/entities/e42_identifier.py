@@ -1,6 +1,5 @@
 from .e41_appellation import E41Appellation
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -19,16 +18,14 @@ Examples:
 - Shelf mark "Res 8 P 10"
 - "Guillaume de Machaut (1300?-1377)" [a controlled personal name heading that follows
 the French rules] (Reaney, 1974)
-- ?+41 22 418 5571?
+- &#8220;+41 22 418 5571&#8221;
 - weasel@paveprime.com
-- ?1-29-3 Otsuka, Bunkyo-ku, Tokyo, 121, Japan?
-- ?Rue David Dufour 5, CH-1211, Gen?ve?
+- &#8220;1-29-3 Otsuka, Bunkyo-ku, Tokyo, 121, Japan&#8221;
+- &#8220;Rue David Dufour 5, CH-1211, Gen&#232;ve&#8221;
 
 
 In First Order Logic:
-E42(x) ? E41(x)
+E42(x) &#8835; E41(x)
     """
 
-    P37_was_assigned_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P38_was_deassigned_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    _typename: str = 'E42Identifier'
+    TYPE_URI = "http://erlangen-crm.org/current/E42_Identifier"

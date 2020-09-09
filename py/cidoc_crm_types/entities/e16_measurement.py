@@ -15,14 +15,14 @@ Regardless whether a measurement is made by an instrument or by human senses, it
 
 Examples:
 - measurement of height of silver cup 232 on the 31st  August 1997
-- the carbon 14 dating of the ?Schoeninger Speer II? in 1996 [an about 400.000 years old
+- the carbon 14 dating of the &#8220;Schoeninger Speer II&#8221; in 1996 [an about 400.000 years old
 - Palaeolithic complete wooden spear found in Schoeningen, Niedersachsen, Germany in 1995] (Kouwenhoven, 1997)
-- The pixel size of the jpeg version of Titian?s painting Bacchus and Ariadne from 1520?3, as freely downloadable from the National Gallery in London?s web page <https://www.nationalgallery.org.uk/paintings/titian-bacchus-and-ariadne> is 581600 pixels.
+- The pixel size of the jpeg version of Titian&#8217;s painting Bacchus and Ariadne from 1520&#8211;3, as freely downloadable from the National Gallery in London&#8217;s web page <https://www.nationalgallery.org.uk/paintings/titian-bacchus-and-ariadne> is 581600 pixels.
 - The scope note of E21 Person in the Definition of the CIDOC Conceptual Reference Model Version 5.0.4 as downloaded from <http://www.cidoccrm.org/sites/default/files/cidoc_crm_version_5.0.4.pdf> consists of 77 words.
 
 
 In First Order Logic:
-E16(x) ? E13(x)
+E16(x) &#8835; E13(x)
     """
 
-    _typename: str = 'E16Measurement'
+    TYPE_URI = "http://erlangen-crm.org/current/E16_Measurement"

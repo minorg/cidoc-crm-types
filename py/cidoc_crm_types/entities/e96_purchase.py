@@ -1,6 +1,5 @@
 from .e8_acquisition import E8Acquisition
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -13,8 +12,7 @@ This class is a very specific case of the much more complex social business prac
 
 
 In First Order Logic:
-E96(x) ? E8(x)
+E96(x) &#8835; E8(x)
     """
 
-    P179_had_sales_price: Tuple[object, ...] = ()  # Range: E97MonetaryAmount
-    _typename: str = 'E96Purchase'
+    TYPE_URI = "http://erlangen-crm.org/current/E96_Purchase"

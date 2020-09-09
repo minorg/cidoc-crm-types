@@ -23,7 +23,7 @@ Examples:
 
 
 In First Order Logic:
-E6(x) ? E64(x)
+E6(x) &#8835; E64(x)
     """
 
-    _typename: str = 'E6Destruction'
+    TYPE_URI = "http://erlangen-crm.org/current/E6_Destruction"

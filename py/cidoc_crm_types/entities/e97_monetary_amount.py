@@ -1,6 +1,5 @@
 from .e54_dimension import E54Dimension
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -11,12 +10,11 @@ This class comprises quantities of monetary possessions or obligations in terms 
 
 
 Example:
-- Christies? hammer price for ?Vase with Fifteen Sunflowers? (E97) has currency British Pounds (E98)
+- Christies&#8217; hammer price for &#8220;Vase with Fifteen Sunflowers&#8221; (E97) has currency British Pounds (E98)
 
 
 In First Order Logic:
-E97(x) ? E54(x)
+E97(x) &#8835; E54(x)
     """
 
-    P179i_was_sales_price_of: Tuple[object, ...] = ()  # Range: E96Purchase
-    _typename: str = 'E97MonetaryAmount'
+    TYPE_URI = "http://erlangen-crm.org/current/E97_Monetary_Amount"

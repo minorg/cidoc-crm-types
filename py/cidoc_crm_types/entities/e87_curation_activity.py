@@ -1,6 +1,5 @@
 from .e7_activity import E7Activity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -15,12 +14,11 @@ Items are accumulated and organized following criteria like subject, chronologic
 
 
 Examples:
-- the curation of Mikael Heggelund Foslie's coralline red algae Herbarium 1876 ? 1909 (when Foslie died), now at Museum of Natural History and Archaeology, Norway
+- the curation of Mikael Heggelund Foslie's coralline red algae Herbarium 1876 &#8211; 1909 (when Foslie died), now at Museum of Natural History and Archaeology, Norway
 
 
 In First Order Logic:
-E87(x) ? E7(x)
+E87(x) &#8835; E7(x)
     """
 
-    P147_curated: Tuple[object, ...] = ()  # Range: E78Collection
-    _typename: str = 'E87CurationActivity'
+    TYPE_URI = "http://erlangen-crm.org/current/E87_Curation_Activity"

@@ -1,6 +1,5 @@
 from .e77_persistent_item import E77PersistentItem
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -15,18 +14,14 @@ They may be intellectual products or physical things. They may for instance have
 Examples:
 - my photograph collection (E78)
 - the bottle of milk in my refrigerator (E22)
-- the Riss A1 plan of the Stra?burger M?nster (French: Cath?drale Notre-Dame de Strasbourg) (E29) (Liess, R., 1985)
-- the thing on the top of Otto Hahn?s desk (E19)
+- the Riss A1 plan of the Stra&#223;burger M&#252;nster (French: Cath&#233;drale Notre-Dame de Strasbourg) (E29) (Liess, R., 1985)
+- the thing on the top of Otto Hahn&#8217;s desk (E19)
 - the form of the no-smoking sign (E36)
 - the cave of Dirou, Mani, Greece (E27) (Psimenos. 2005)
 
 
 In First Order Logic:
-E70(x) ? E77(x)
+E70(x) &#8835; E77(x)
     """
 
-    P101_had_as_general_use: Tuple[object, ...] = ()  # Range: E55Type
-    P130_features_are_also_found_on: Tuple[object, ...] = ()  # Range: E70Thing
-    P130_shows_features_of: Tuple[object, ...] = ()  # Range: E70Thing
-    P43_has_dimension: Tuple[object, ...] = ()  # Range: E54Dimension
-    _typename: str = 'E70Thing'
+    TYPE_URI = "http://erlangen-crm.org/current/E70_Thing"

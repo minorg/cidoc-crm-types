@@ -16,7 +16,7 @@ Examples:
 - the determination of a cactus in Martin Doerr's garden as 'Cereus hildmannianus K.Schumann', July 2003
 
 In First Order Logic:
-E17(x) ? E13(x)
+E17(x) &#8835; E13(x)
     """
 
-    _typename: str = 'E17TypeAssignment'
+    TYPE_URI = "http://erlangen-crm.org/current/E17_Type_Assignment"

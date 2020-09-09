@@ -1,6 +1,5 @@
 from .e89_propositional_object import E89PropositionalObject
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -18,9 +17,7 @@ Examples:
 
 
 In First Order Logic:
-E30(x) ? E89(x
+E30(x) &#8835; E89(x
     """
 
-    P104_applies_to: Tuple[object, ...] = ()  # Range: E72LegalObject
-    P75_is_possessed_by: Tuple[object, ...] = ()  # Range: E39Actor
-    _typename: str = 'E30Right'
+    TYPE_URI = "http://erlangen-crm.org/current/E30_Right"

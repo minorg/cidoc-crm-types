@@ -1,14 +1,13 @@
 from .e18_physical_thing import E18PhysicalThing
-from .e71_man_made_thing import E71ManMadeThing
+from .e71_human_made_thing import E71HumanMadeThing
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
-class E24PhysicalManMadeThing(E18PhysicalThing, E71ManMadeThing):
+class E24PhysicalHumanMadeThing(E71HumanMadeThing, E18PhysicalThing):
     """
 Scope note:
-This class comprises all persistent physical items of any size that are purposely created by human activity. This class comprises, besides others, Human-Made objects, such as a swords, and Human-Made features, such as rock art. For example, a ?cup and ring? carving on bedrock is regarded as instance of E24 Physical Human-Made Thing.
+This class comprises all persistent physical items of any size that are purposely created by human activity. This class comprises, besides others, Human-Made objects, such as a swords, and Human-Made features, such as rock art. For example, a &#8220;cup and ring&#8221; carving on bedrock is regarded as instance of E24 Physical Human-Made Thing.
 
 Instances of Human-Made thing may be the result of modifying pre-existing physical things, preserving larger parts or most of the original matter and structure, which poses the question if they are new or even Human-Made, the respective interventions of production made on such original material should be obvious and sufficient to regard that the product has a new, distinct identity and intended function and is human-made. Substantial continuity of the previous matter and structure in the new product can be documented by describing the production process also as instance of E81 Transformation.
 
@@ -25,9 +24,8 @@ Examples:
 - my empty DVD disk (E22) (fictitious)
 
 In First Order Logic:
-E24(x) ? E18(x)
-E24(x) ? E71(x)
+E24(x) &#8835; E18(x)
+E24(x) &#8835; E71(x)
     """
 
-    P62_depicts: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    _typename: str = 'E24PhysicalManMadeThing'
+    TYPE_URI = "http://erlangen-crm.org/current/E24_Physical_Human-Made_Thing"

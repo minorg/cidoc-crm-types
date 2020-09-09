@@ -1,6 +1,5 @@
 from .e7_activity import E7Activity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -23,12 +22,11 @@ The interpretation of the museum notion of "accession" differs between instituti
 
 Examples:
 - the delivery of the paintings by Secure Deliveries Inc. to the National Gallery
-- the return of Picasso?s ?Guernica? to Madrid?s Prado in 1981 (Chipp, 1988)
+- the return of Picasso&#8217;s &#8220;Guernica&#8221; to Madrid&#8217;s Prado in 1981 (Chipp, 1988)
 
 
 In First Order Logic:
-E10(x) ? E7(x)
+E10(x) &#8835; E7(x)
     """
 
-    P30_transferred_custody_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    _typename: str = 'E10TransferofCustody'
+    TYPE_URI = "http://erlangen-crm.org/current/E10_Transfer_of_Custody"

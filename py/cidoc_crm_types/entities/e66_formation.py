@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class E66Formation(E7Activity, E63BeginningofExistence):
+class E66Formation(E63BeginningofExistence, E7Activity):
     """
 Scope note: 
 This class comprises events that result in the formation of a formal or informal E74 Group of people, such as a club, society, association, corporation or nation.
@@ -19,8 +19,8 @@ Examples:
 
 
 In First Order Logic:
-E66(x) ? E7(x)
-E66(x) ? E63(x)
+E66(x) &#8835; E7(x)
+E66(x) &#8835; E63(x)
     """
 
-    _typename: str = 'E66Formation'
+    TYPE_URI = "http://erlangen-crm.org/current/E66_Formation"

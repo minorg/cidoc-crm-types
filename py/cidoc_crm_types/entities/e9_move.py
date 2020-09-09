@@ -1,6 +1,5 @@
 from .e7_activity import E7Activity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -14,13 +13,11 @@ Note, that the class E9 Move inherits the property P7 took place at (witnessed):
 
 Examples:
 - the relocation of London Bridge from the UK to the USA. (Clarke, 1992)
-- the movement of the exhibition ?Treasures of Tut-Ankh-Amun? 1976-1979 (Treasures of Tutankhamun, exhibition catalogue, 1972) .
+- the movement of the exhibition &#8220;Treasures of Tut-Ankh-Amun&#8221; 1976-1979 (Treasures of Tutankhamun, exhibition catalogue, 1972) .
 
 
 In First Order Logic:
-E9(x) ? E7(x)
+E9(x) &#8835; E7(x)
     """
 
-    P26_moved_to: Tuple[object, ...] = ()  # Range: E53Place
-    P27_moved_from: Tuple[object, ...] = ()  # Range: E53Place
-    _typename: str = 'E9Move'
+    TYPE_URI = "http://erlangen-crm.org/current/E9_Move"

@@ -10,17 +10,17 @@ This class comprises activities that result in the allocation of an identifier t
 
 Examples of such identifiers include Find Numbers, Inventory Numbers, uniform titles in the sense of librarianship and Digital Object Identifiers (DOI). Documenting the act of identifier assignment and deassignment is especially useful when objects change custody or the identification system of an organization is changed. In order to keep track of the identity of things in such cases, it is important to document by whom, when and for what purpose an identifier is assigned to an item.
 
-The fact that an identifier is a preferred one for an organisation can be expressed by using the property E1 CRM Entity. P48 has preferred identifier (is preferred identifier of): E42 Identifier. It can better be expressed in a context independent form by assigning a suitable E55 Type, such as ?preferred identifier assignment?, to the respective instance of E15 Identifier Assignment via the P2 has type property.
+The fact that an identifier is a preferred one for an organisation can be expressed by using the property E1 CRM Entity. P48 has preferred identifier (is preferred identifier of): E42 Identifier. It can better be expressed in a context independent form by assigning a suitable E55 Type, such as &#8220;preferred identifier assignment&#8221;, to the respective instance of E15 Identifier Assignment via the P2 has type property.
 
 
 Examples:
 - Replacement of the inventory number TA959a by GE34604 for a 17th century lament cloth at the Museum Benaki, Athens
-- Assigning the author-uniform title heading ?Goethe, Johann Wolfgang von, 1749-1832. Faust. 1. Theil.? for the respective work
-- On June 1, 2001 assigning the personal name heading ?Guillaume, de Machaut, ca. 1300-1377? to Guillaume de Machaut
+- Assigning the author-uniform title heading &#8220;Goethe, Johann Wolfgang von, 1749-1832. Faust. 1. Theil.&#8221; for the respective work
+- On June 1, 2001 assigning the personal name heading &#8220;Guillaume, de Machaut, ca. 1300-1377&#8221; to Guillaume de Machaut
 
 
 In First Order Logic:
-E15(x) ? E13(x)
+E15(x) &#8835; E13(x)
     """
 
-    _typename: str = 'E15IdentifierAssignment'
+    TYPE_URI = "http://erlangen-crm.org/current/E15_Identifier_Assignment"

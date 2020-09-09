@@ -1,10 +1,10 @@
 from .e19_physical_object import E19PhysicalObject
-from .e24_physical_man_made_thing import E24PhysicalManMadeThing
+from .e24_physical_human_made_thing import E24PhysicalHumanMadeThing
 from dataclasses import dataclass
 
 
 @dataclass
-class E22ManMadeObject(E24PhysicalManMadeThing, E19PhysicalObject):
+class E22HumanMadeObject(E24PhysicalHumanMadeThing, E19PhysicalObject):
     """
 Scope note:
 This class comprises physical objects purposely created by human activity.
@@ -13,14 +13,14 @@ No assumptions are made as to the extent of modification required to justify reg
 
 
 Examples:
-- Mallard (the World?s fastest steam engine) (Solomon, 2003)
+- Mallard (the World&#8217;s fastest steam engine) (Solomon, 2003)
 - the Portland Vase (Walker, 2004)
 - the Coliseum (Hopkins, 2005)
 
 
 In First Order Logic:
-E22(x) ? E19(x)
-E22(x) ? E24(x)
+E22(x) &#8835; E19(x)
+E22(x) &#8835; E24(x)
     """
 
-    _typename: str = 'E22ManMadeObject'
+    TYPE_URI = "http://erlangen-crm.org/current/E22_Human-Made_Object"

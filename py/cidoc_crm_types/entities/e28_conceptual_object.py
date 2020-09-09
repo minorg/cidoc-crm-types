@@ -1,9 +1,9 @@
-from .e71_man_made_thing import E71ManMadeThing
+from .e71_human_made_thing import E71HumanMadeThing
 from dataclasses import dataclass
 
 
 @dataclass
-class E28ConceptualObject(E71ManMadeThing):
+class E28ConceptualObject(E71HumanMadeThing):
     """
 Scope note:
 This class comprises non-material products of our minds and other human produced data that have become objects of a discourse about their identity, circumstances of creation or historical implication. The production of such information may have been supported by the use of technical devices such as cameras or computers.
@@ -14,16 +14,16 @@ They cannot be destroyed. They exist as long as they can be found on at least on
 
 
 Examples:
-- Beethoven?s ?Ode an die Freude? (Ode to Joy) (E73) (Kershaw, 1999)
-- the definition of ?ontology? in the Oxford English Dictionary (E73)
+- Beethoven&#8217;s &#8220;Ode an die Freude&#8221; (Ode to Joy) (E73) (Kershaw, 1999)
+- the definition of &#8220;ontology&#8221; in the Oxford English Dictionary (E73)
 - the knowledge about the victory at Marathon carried by the famous runner (E89)
 [explanation note: In the following examples we illustrate the distinction between a propositional object,
 its names and its encoded forms. The Maxwell equations are a good example, because they belong to the
 fundamental laws of physics and their mathematical content yields identical, unambiguous results
 regardless formulation and encoding]
-- ?Maxwell equations? [preferred subject access point from LCSH] (E41)  http://lccn.loc.gov/sh85082387 [5], as of 19 November 2012]
+- &#8216;Maxwell equations&#8217; [preferred subject access point from LCSH] (E41)  http://lccn.loc.gov/sh85082387 [5], as of 19 November 2012]
 **explanation: This is only the name for the Maxwell equations as standardized by the Library of Congress and NOT the equations themselves.
-- ?Equations, Maxwell? [variant subject access point, from the same source] (E41)
+- &#8216;Equations, Maxwell&#8217; [variant subject access point, from the same source] (E41)
 **explanation: This is another name for the equation standardized by the Library of Congress and not the equations themselves
 - Maxwell's equations (E89)
 ** explanation: This is the propositional content of the equations proper, independent of any particular notation or mathematical formalism.
@@ -32,7 +32,7 @@ regardless formulation and encoding]
 
 
 In First Order Logic:
-E28(x) ? E71(x)
+E28(x) &#8835; E71(x)
     """
 
-    _typename: str = 'E28ConceptualObject'
+    TYPE_URI = "http://erlangen-crm.org/current/E28_Conceptual_Object"

@@ -1,6 +1,5 @@
 from .e63_beginning_of_existence import E63BeginningofExistence
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -17,8 +16,7 @@ Examples:
 
 
 In First Order Logic:
-E67(x) ? E63(x)
+E67(x) &#8835; E63(x)
     """
 
-    P97_from_father: Tuple[object, ...] = ()  # Range: E21Person
-    _typename: str = 'E67Birth'
+    TYPE_URI = "http://erlangen-crm.org/current/E67_Birth"

@@ -1,6 +1,5 @@
 from .e1_crm_entity import E1CRMEntity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -21,17 +20,12 @@ Examples:
 - The AD1262-1312, 1303-1384 calibrated C14 date for the Shroud of Turin
 - The 33 m diameter of the Stonehenge Sarcen Circle
 - The 755.9 foot length of the sides of the Great Pyramid at Giza 
-- Christies? hammer price for ?Vase with Fifteen Sunflowers? (E97) has currency British Pounds (E98)
+- Christies&#8217; hammer price for &#8220;Vase with Fifteen Sunflowers&#8221; (E97) has currency British Pounds (E98)
 - The time span of the Battle of Issos 333 B.C.E. (E52) had duration Battle of Issos duration (E54)
 
 
 In First Order Logic:
-E54(x) ? E1(x)
+E54(x) &#8835; E1(x)
     """
 
-    P191i_was_duration_of: Tuple[object, ...] = ()  # Range: E52TimeSpan
-    P40_was_observed_in: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P43_is_dimension_of: Tuple[object, ...] = ()  # Range: E70Thing
-    P90_has_value: Tuple[object, ...] = ()  # Range: object
-    P91_has_unit: Tuple[object, ...] = ()  # Range: E58MeasurementUnit
-    _typename: str = 'E54Dimension'
+    TYPE_URI = "http://erlangen-crm.org/current/E54_Dimension"

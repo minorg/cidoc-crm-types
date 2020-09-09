@@ -1,6 +1,5 @@
 from .e7_activity import E7Activity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -18,14 +17,13 @@ If the instance of E29 Design or Procedure utilized for the modification prescri
 
 Examples:
 - the construction of the SS Great Britain (E12)(Gregor, 1971)
-- the impregnation of the Vasa warship in Stockholm for preservation after 1956(H?fors, 2010)
+- the impregnation of the Vasa warship in Stockholm for preservation after 1956(H&#229;fors, 2010)
 - the transformation of the Enola Gay into a museum exhibit by the National Air and Space Museum in Washington DC between 1993 and 1995 (E12, E81) (Yakel, 2000)
 - the last renewal of the gold coating of the Toshogu shrine in Nikko, Japan(Cali and Dougil, 2012)
 
 
 In First Order Logic:
-E11(x) ? E7(x)
+E11(x) &#8835; E7(x)
     """
 
-    P126_employed: Tuple[object, ...] = ()  # Range: E57Material
-    _typename: str = 'E11Modification'
+    TYPE_URI = "http://erlangen-crm.org/current/E11_Modification"

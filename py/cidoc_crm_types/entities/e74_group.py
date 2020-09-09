@@ -1,6 +1,5 @@
 from .e39_actor import E39Actor
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -17,7 +16,7 @@ Examples:
 - the Navajo (Correll, 1972)
 - the Greeks (Williams, 1993)
 - the peace protestors in New York City on February 15 2003
-- Exxon-Mobil (?Exxon Mobil Corp?, Mergent's dividend achievers, vol. 3, no. 3, 2006, pp. 97-97)
+- Exxon-Mobil (&#8216;Exxon Mobil Corp&#8217;, Mergent's dividend achievers, vol. 3, no. 3, 2006, pp. 97-97)
 - King Solomon and his wives (Thieberger, 1947)
 - The President of the Swiss Confederation
 - Nicolas Bourbaki (Aczel, 2007)
@@ -29,8 +28,7 @@ Examples:
 
 
 In First Order Logic:
-E74(x) ? E39(x)
+E74(x) &#8835; E39(x)
     """
 
-    P107_has_current_or_former_member: Tuple[object, ...] = ()  # Range: E39Actor
-    _typename: str = 'E74Group'
+    TYPE_URI = "http://erlangen-crm.org/current/E74_Group"

@@ -13,13 +13,13 @@ be codified in reference documents that are used in cultural documentation.
 
 
 Examples:
-? Minoan double axe mark 
-? ?
-? ?
+&#61607; Minoan double axe mark 
+&#61607; &#169;
+&#61607; &#61514;
 
 
 In First Order Logic:
-E37(x) ? E36(x)
+E37(x) &#8835; E36(x)
     """
 
-    _typename: str = 'E37Mark'
+    TYPE_URI = "http://erlangen-crm.org/current/E37_Mark"

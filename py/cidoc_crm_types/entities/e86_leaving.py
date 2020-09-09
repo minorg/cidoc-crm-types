@@ -12,13 +12,13 @@ Typical scenarios include the termination of membership in a social organisation
 
 
 Examples:
-- The end of Sir Isaac Newton?s duty as Member of Parliament for the University of Cambridge to the Convention Parliament in 1702 (Gleick, 2003)
-- George Washington?s leaving office in 1797 (Jones, 1979)
-- The implementation of the treaty regulating the termination of Greenland?s membership in EU between EU, Denmark and Greenland February 1. 1985
+- The end of Sir Isaac Newton&#8217;s duty as Member of Parliament for the University of Cambridge to the Convention Parliament in 1702 (Gleick, 2003)
+- George Washington&#8217;s leaving office in 1797 (Jones, 1979)
+- The implementation of the treaty regulating the termination of Greenland&#8217;s membership in EU between EU, Denmark and Greenland February 1. 1985
 
 
 In First Order Logic:
-E86(x) ? E7(x)
+E86(x) &#8835; E7(x)
     """
 
-    _typename: str = 'E86Leaving'
+    TYPE_URI = "http://erlangen-crm.org/current/E86_Leaving"

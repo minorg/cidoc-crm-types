@@ -19,7 +19,7 @@ Examples:
 
 
 In First Order Logic:
-E20(x) ? E19(x)
+E20(x) &#8835; E19(x)
     """
 
-    _typename: str = 'E20BiologicalObject'
+    TYPE_URI = "http://erlangen-crm.org/current/E20_Biological_Object"

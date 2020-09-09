@@ -1,6 +1,5 @@
 from .e1_crm_entity import E1CRMEntity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -11,23 +10,14 @@ This class comprises 4 dimensional point sets (volumes) in physical spacetime (i
 
 
 Examples:
-- the?spacetime?Volume?of?the?Event?of?Ceasars?murder?
-- the?spacetime?Volume?where?and?when?the?carbon?14?dating?of?the?"Schoeninger?Speer?II"?in?1996 ?took?place?
-- the?spatio?temporal?trajectory?of?the?H.M.S.?Victory?from?its?building?to?its?actual?location
-- the?spacetime?volume?defined?by?a?polygon?approximating?the?Danube?river?flood?in?Austria?between?6th?and?9th?of?August?2002
+- the&#160;spacetime&#160;Volume&#160;of&#160;the&#160;Event&#160;of&#160;Ceasars&#160;murder&#160;
+- the&#160;spacetime&#160;Volume&#160;where&#160;and&#160;when&#160;the&#160;carbon&#160;14&#160;dating&#160;of&#160;the&#160;"Schoeninger&#160;Speer&#160;II"&#160;in&#160;1996 &#160;took&#160;place&#160;
+- the&#160;spatio&#8208;temporal&#160;trajectory&#160;of&#160;the&#160;H.M.S.&#160;Victory&#160;from&#160;its&#160;building&#160;to&#160;its&#160;actual&#160;location
+- the&#160;spacetime&#160;volume&#160;defined&#160;by&#160;a&#160;polygon&#160;approximating&#160;the&#160;Danube&#160;river&#160;flood&#160;in&#160;Austria&#160;between&#160;6th&#160;and&#160;9th&#160;of&#160;August&#160;2002
 
 
 In First Order Logic:
-E92(x) ? E1(x)
+E92(x) &#8835; E1(x)
     """
 
-    P10_contains: Tuple[object, ...] = ()  # Range: E92SpacetimeVolume
-    P10_falls_within: Tuple[object, ...] = ()  # Range: E92SpacetimeVolume
-    P132_overlaps_with: Tuple[object, ...] = ()  # Range: E92SpacetimeVolume
-    P133_is_separated_from: Tuple[object, ...] = ()  # Range: E92SpacetimeVolume
-    P160_has_temporal_projection: Tuple[object, ...] = ()  # Range: E52TimeSpan
-    P161_has_spatial_projection: Tuple[object, ...] = ()  # Range: E53Place
-    P166i_had_presence: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P169i_spacetime_volume_is_defined_by: Tuple[object, ...] = ()  # Range: object
-    P196i_is_defined_by: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    _typename: str = 'E92SpacetimeVolume'
+    TYPE_URI = "http://erlangen-crm.org/current/E92_Spacetime_Volume"

@@ -1,6 +1,5 @@
 from .e1_crm_entity import E1CRMEntity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -15,27 +14,11 @@ In some contexts, such phenomena are also called perdurants. This class is disjo
 Examples:
 - Bronze Age (E4) (Childe, 1963)
 - the earthquake in Lisbon 1755 (E5) (Chester, 2001)
-- the Peterhof Palace near Saint Petersburg being in ruins from 1944 ? 1946 (E3) (Maddox, 2015)
+- the Peterhof Palace near Saint Petersburg being in ruins from 1944 &#8211; 1946 (E3) (Maddox, 2015)
 
 
 In First Order Logic:
-E2(x) ? E1(x)
+E2(x) &#8835; E1(x)
     """
 
-    P173_starts_before_or_at_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P174_ends_after_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P174_starts_before_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P175_starts_before_or_with_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P175i_starts_after_or_with_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P176_starts_before_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P176i_starts_after_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P182_ends_befort_or_at_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P182i_starts_after_or_with_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P183_ends_before_the_start_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P183i_starts_after_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P184_ends_before_or_with_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P184_ens_before_or_with_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P185_ends_before_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P185i_ends_after_the_end_of: Tuple[object, ...] = ()  # Range: E2TemporalEntity
-    P4_has_time_span: Tuple[object, ...] = ()  # Range: E52TimeSpan
-    _typename: str = 'E2TemporalEntity'
+    TYPE_URI = "http://erlangen-crm.org/current/E2_Temporal_Entity"

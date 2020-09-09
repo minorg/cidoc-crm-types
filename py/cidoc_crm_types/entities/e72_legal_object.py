@@ -1,6 +1,5 @@
 from .e70_thing import E70Thing
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -18,9 +17,7 @@ Examples:
 
 
 In First Order Logic:
-E72(x) ? E70(x)
+E72(x) &#8835; E70(x)
     """
 
-    P104_is_subject_to: Tuple[object, ...] = ()  # Range: E30Right
-    P105_right_held_by: Tuple[object, ...] = ()  # Range: E39Actor
-    _typename: str = 'E72LegalObject'
+    TYPE_URI = "http://erlangen-crm.org/current/E72_Legal_Object"

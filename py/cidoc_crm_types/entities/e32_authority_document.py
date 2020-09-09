@@ -16,7 +16,7 @@ Examples:
 
 
 In First Order Logic:
-E32(x) ? E31(x)
+E32(x) &#8835; E31(x)
     """
 
-    _typename: str = 'E32AuthorityDocument'
+    TYPE_URI = "http://erlangen-crm.org/current/E32_Authority_Document"

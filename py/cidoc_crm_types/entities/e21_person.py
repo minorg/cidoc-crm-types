@@ -1,7 +1,6 @@
 from .e20_biological_object import E20BiologicalObject
 from .e39_actor import E39Actor
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -21,11 +20,8 @@ Examples:
 
 
 In First Order Logic:
-E21(x) ? E20(x)
-E21(x) ? E39(x)
+E21(x) &#8835; E20(x)
+E21(x) &#8835; E39(x)
     """
 
-    P152_has_parent: Tuple[object, ...] = ()  # Range: E21Person
-    P152_is_parent_of: Tuple[object, ...] = ()  # Range: E21Person
-    P97_was_father_for: Tuple[object, ...] = ()  # Range: E67Birth
-    _typename: str = 'E21Person'
+    TYPE_URI = "http://erlangen-crm.org/current/E21_Person"

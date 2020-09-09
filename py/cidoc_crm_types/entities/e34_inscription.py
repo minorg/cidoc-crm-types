@@ -21,8 +21,8 @@ Examples:
 
 
 In First Order Logic:
-E34(x) ? E33(x)
-E34(x) ? E37(x)
+E34(x) &#8835; E33(x)
+E34(x) &#8835; E37(x)
     """
 
-    _typename: str = 'E34Inscription'
+    TYPE_URI = "http://erlangen-crm.org/current/E34_Inscription"

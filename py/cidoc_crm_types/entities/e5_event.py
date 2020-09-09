@@ -1,6 +1,5 @@
 from .e4_period import E4Period
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -13,7 +12,7 @@ While the continuous growth of a tree lacks the limits characteristic of an even
 
 The effects of an instance of E5 Event may not lead to relevant permanent changes of properties or relations of the items involved in it, for example an unrecorded performances. Of course, in order to be documented, some kind of evidence for an event must exist, be it witnesses, traces or products of the event. While instances of E4 Period always require some form of coherence between its constituent phenomena, in addition, the essential constituents of instances of E5 Event should contribute to an overall effect; for example the statements made during a meeting and the listening of the audience.
 
-Viewed at a coarse level of detail, an instance of E5 Event may appear as if it had an ?instantaneous? overall effect, but any process or interaction of material nature in reality have an extent in time and space. At a fine level, instances of E5 Event may be analyzed into component phenomena and phases within a space and timeframe, and as such can be seen as a period, regardless of the size of the phenomena. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy overall effect and are thus not instances of E5 Event.
+Viewed at a coarse level of detail, an instance of E5 Event may appear as if it had an &#8216;instantaneous&#8217; overall effect, but any process or interaction of material nature in reality have an extent in time and space. At a fine level, instances of E5 Event may be analyzed into component phenomena and phases within a space and timeframe, and as such can be seen as a period, regardless of the size of the phenomena. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy overall effect and are thus not instances of E5 Event.
 
 
 Examples:
@@ -28,10 +27,7 @@ Examples:
 
 
 In First Order Logic:
-E5(x) ? E4(x)
+E5(x) &#8835; E4(x)
     """
 
-    P11_had_participant: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P12_occurred_in_the_presence_of: Tuple[object, ...] = ()  # Range: E77PersistentItem
-    P20_was_purpose_of: Tuple[object, ...] = ()  # Range: E7Activity
-    _typename: str = 'E5Event'
+    TYPE_URI = "http://erlangen-crm.org/current/E5_Event"

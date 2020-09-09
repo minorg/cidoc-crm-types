@@ -18,7 +18,7 @@ Examples:
 
 
 In First Order Logic:
-E85(x) ? E7(x)
+E85(x) &#8835; E7(x)
     """
 
-    _typename: str = 'E85Joining'
+    TYPE_URI = "http://erlangen-crm.org/current/E85_Joining"

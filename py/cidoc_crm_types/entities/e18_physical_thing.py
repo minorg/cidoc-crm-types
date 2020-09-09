@@ -1,6 +1,5 @@
 from .e72_legal_object import E72LegalObject
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -16,29 +15,12 @@ The CIDOC CRM is generally not concerned with amounts of matter in fluid or gase
 
 Examples:
 - the Cullinan Diamond (E19) (Scarratt and Shor, 2006)
-- the cave ?Ideon Andron? in Crete (E26) (Smith, 1844-49)
+- the cave &#8220;Ideon Andron&#8221; in Crete (E26) (Smith, 1844-49)
 - the Mona Lisa (E22) (Mohem, 2006)
 
 
 In First Order Logic:
-E18(x) ? E72(x)
+E18(x) &#8835; E72(x)
     """
 
-    P156_occupies: Tuple[object, ...] = ()  # Range: E53Place
-    P157_provides_reference_space_for: Tuple[object, ...] = ()  # Range: E53Place
-    P195i_had_presence: Tuple[object, ...] = ()  # Range: E93SpacetimeSnapshot
-    P196_defines: Tuple[object, ...] = ()  # Range: E92SpacetimeVolume
-    P24_changed_ownership_through: Tuple[object, ...] = ()  # Range: E8Acquisition
-    P30_custody_transferred_through: Tuple[object, ...] = ()  # Range: E10TransferofCustody
-    P34_was_assessed_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P44_has_condition: Tuple[object, ...] = ()  # Range: E3ConditionState
-    P45_consists_of: Tuple[object, ...] = ()  # Range: E57Material
-    P46_forms_part_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    P46_is_composed_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    P49_has_former_or_current_keeper: Tuple[object, ...] = ()  # Range: E39Actor
-    P50_has_current_keeper: Tuple[object, ...] = ()  # Range: E39Actor
-    P51_has_former_or_current_owner: Tuple[object, ...] = ()  # Range: E39Actor
-    P53_has_former_or_current_location: Tuple[object, ...] = ()  # Range: E53Place
-    P59_has_section: Tuple[object, ...] = ()  # Range: E53Place
-    P8_witnessed: Tuple[object, ...] = ()  # Range: E4Period
-    _typename: str = 'E18PhysicalThing'
+    TYPE_URI = "http://erlangen-crm.org/current/E18_Physical_Thing"

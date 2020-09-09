@@ -1,6 +1,5 @@
 from .e2_temporal_entity import E2TemporalEntity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -13,18 +12,14 @@ An instance of this class describes the prevailing physical condition of any mat
 
 
 Examples:
--  the "reconstructed" state of the ?Amber Room? in Tsarskoje Selo from summer 2003 until now (Owen, 2009)
+-  the "reconstructed" state of the &#8220;Amber Room&#8221; in Tsarskoje Selo from summer 2003 until now (Owen, 2009)
 - the "ruined" state of Peterhof Palace near Saint Petersburg from 1944 to 1946 (Maddox, 2015)
-- the state of my turkey in the oven at 14:30 on 25 December, 2002 (P2 has type: E55 Type ?still not cooked?)
+- the state of my turkey in the oven at 14:30 on 25 December, 2002 (P2 has type: E55 Type &#8220;still not cooked&#8221;)
 - the topography of the leaves of Sinai Printed Book 3234.2361 on the 10th of July 2007 (described as: of type "cockled")
 
 
 In First Order Logic:
-E3(x) ? E2(x)
+E3(x) &#8835; E2(x)
     """
 
-    P35_was_identified_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P44_is_condition_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    P5_consists_of: Tuple[object, ...] = ()  # Range: E3ConditionState
-    P5_forms_part_of: Tuple[object, ...] = ()  # Range: E3ConditionState
-    _typename: str = 'E3ConditionState'
+    TYPE_URI = "http://erlangen-crm.org/current/E3_Condition_State"

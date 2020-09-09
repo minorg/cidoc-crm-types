@@ -13,11 +13,11 @@ Typical scenarios include the attachment of an accessory, the integration of a c
 
 Examples:
 - the setting of the koh-i-noor diamond into the crown of Queen Elizabeth the Queen Mother (Dalrymple, 2017)
-- the addition of the painting ?Room in Brooklyn? by Edward Hopper to the collection of the Museum of Fine Arts, Boston
+- the addition of the painting &#8220;Room in Brooklyn&#8221; by Edward Hopper to the collection of the Museum of Fine Arts, Boston
 
 
 In First Order Logic:
-E79(x) ? E11(x)
+E79(x) &#8835; E11(x)
     """
 
-    _typename: str = 'E79PartAddition'
+    TYPE_URI = "http://erlangen-crm.org/current/E79_Part_Addition"

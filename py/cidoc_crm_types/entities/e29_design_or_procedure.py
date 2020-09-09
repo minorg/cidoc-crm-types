@@ -1,6 +1,5 @@
 from .e73_information_object import E73InformationObject
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -14,7 +13,7 @@ Instances of E29 Design or Procedure can be structured in parts and sequences or
 Designs or procedures can be seen as one of the following:
 1. A schema for the activities it describes
 2. A schema of the products that result from their application.
-3. An independent intellectual product that may have never been applied, such as Leonardo da Vinci?s famous plans for flying machines.
+3. An independent intellectual product that may have never been applied, such as Leonardo da Vinci&#8217;s famous plans for flying machines.
 
 Because designs or procedures may never be applied or only partially executed, the CIDOC CRM models a loose relationship between the plan and the respective product.
 
@@ -22,15 +21,12 @@ Because designs or procedures may never be applied or only partially executed, t
 Examples:
 - the ISO standardisation procedure
 - the musical notation of Beethoven's "Ode to Joy"
-- the architectural drawings for the K?lner Dom in Cologne, Germany
+- the architectural drawings for the K&#246;lner Dom in Cologne, Germany
 - The drawing on the folio 860 of the Codex Atlanticus from Leonardo da Vinci, 1486-1490, kept in the Biblioteca Ambrosiana in Milan
 
 
 In First Order Logic:
-E29(x) ? E73(x)
+E29(x) &#8835; E73(x)
     """
 
-    P187i_is_production_plan_for: Tuple[object, ...] = ()  # Range: E99ProductType
-    P69_has_association_with: Tuple[object, ...] = ()  # Range: E29DesignorProcedure
-    P69_is_associated_with: Tuple[object, ...] = ()  # Range: E29DesignorProcedure
-    _typename: str = 'E29DesignorProcedure'
+    TYPE_URI = "http://erlangen-crm.org/current/E29_Design_or_Procedure"

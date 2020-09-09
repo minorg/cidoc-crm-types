@@ -16,7 +16,7 @@ Examples:
 
 
 In First Order Logic:
-E14(x) ? E13(x)
+E14(x) &#8835; E13(x)
     """
 
-    _typename: str = 'E14ConditionAssessment'
+    TYPE_URI = "http://erlangen-crm.org/current/E14_Condition_Assessment"

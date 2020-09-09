@@ -1,6 +1,5 @@
 from .e7_activity import E7Activity
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -21,13 +20,12 @@ It may also describe events where a collector appropriates legal title, for exam
 
 Examples:
 - the collection of a hammer-head shark of the genus Sphyrna (Carchariniformes) XXXtbc by John Steinbeck and Edward Ricketts at Puerto Escondido in the Gulf of Mexico on March 25th, 1940. (Steinbeck, 2000)
-- the acquisition of El Greco?s painting entitled ?The Apostles Peter and Paul? by the State Hermitage in Saint Petersburg
-- the loss of my stuffed chaffinch ?Fringilla coelebs Linnaeus, 1758? due to insect damage last year
+- the acquisition of El Greco&#8217;s painting entitled &#8216;The Apostles Peter and Paul&#8217; by the State Hermitage in Saint Petersburg
+- the loss of my stuffed chaffinch &#8216;Fringilla coelebs Linnaeus, 1758&#8217; due to insect damage last year
 
 
 In First Order Logic:
-E8(x) ? E7(x)
+E8(x) &#8835; E7(x)
     """
 
-    P24_transferred_title_of: Tuple[object, ...] = ()  # Range: E18PhysicalThing
-    _typename: str = 'E8Acquisition'
+    TYPE_URI = "http://erlangen-crm.org/current/E8_Acquisition"

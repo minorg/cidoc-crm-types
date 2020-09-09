@@ -1,6 +1,5 @@
 from .e5_event import E5Event
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -16,22 +15,15 @@ Examples:
 - the Battle of Stalingrad (Hoyt, 1993)
 - the Yalta Conference (Harbutt, 2010)
 - my birthday celebration 28-6-1995
-- the writing of ?Faust? by Goethe (E65) (Williams, 1987)
+- the writing of &#8220;Faust&#8221; by Goethe (E65) (Williams, 1987)
 - the formation of the Bauhaus 1919 (E66) (Droste, 2006)
-- calling the place identified by TGN ?7017998? ?Quyunjig? by the people of Iraq
+- calling the place identified by TGN &#8216;7017998&#8217; &#8216;Quyunjig&#8217; by the people of Iraq
 - Kira Weber working in glass art from 1984 to 1993
 - Kira Weber working in oil and pastel painting from 1993
 
 
 In First Order Logic:
-E7(x) ? E5(x)
+E7(x) &#8835; E5(x)
     """
 
-    P125_used_object_of_type: Tuple[object, ...] = ()  # Range: E55Type
-    P15_was_influenced_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P17_was_motivated_by: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P19_was_intended_use_of: Tuple[object, ...] = ()  # Range: E71ManMadeThing
-    P20_had_specific_purpose: Tuple[object, ...] = ()  # Range: E5Event
-    P21_had_general_purpose: Tuple[object, ...] = ()  # Range: E55Type
-    P32_used_general_technique: Tuple[object, ...] = ()  # Range: E55Type
-    _typename: str = 'E7Activity'
+    TYPE_URI = "http://erlangen-crm.org/current/E7_Activity"

@@ -1,6 +1,5 @@
 from .e73_information_object import E73InformationObject
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -22,8 +21,7 @@ Examples:
 
 
 In First Order Logic:
-E33(x) ? E73(x)
+E33(x) &#8835; E73(x)
     """
 
-    P72_has_language: Tuple[object, ...] = ()  # Range: E56Language
-    _typename: str = 'E33LinguisticObject'
+    TYPE_URI = "http://erlangen-crm.org/current/E33_Linguistic_Object"

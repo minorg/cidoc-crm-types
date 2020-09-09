@@ -20,7 +20,7 @@ Examples:
 - the submerged harbour of the Minoan settlement of Gournia, Crete
 
 In First Order Logic:
-E27(x)? E26(x)
+E27(x)&#8835; E26(x)
     """
 
-    _typename: str = 'E27Site'
+    TYPE_URI = "http://erlangen-crm.org/current/E27_Site"

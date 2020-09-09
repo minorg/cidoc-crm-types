@@ -8,7 +8,7 @@ class E63BeginningofExistence(E5Event):
 Scope note:
 This class comprises events that bring into existence any instance of E77 Persistent Item.
 
-It may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exist; it serves as a hook for determination of a ?terminus post quem? or ?terminus ante quem?. 
+It may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exist; it serves as a hook for determination of a &#8220;terminus post quem&#8221; or &#8220;terminus ante quem&#8221;. 
 
 
 Examples:
@@ -19,7 +19,7 @@ Examples:
 
 
 In First Order Logic:
-E63(x) ? E5(x)
+E63(x) &#8835; E5(x)
     """
 
-    _typename: str = 'E63BeginningofExistence'
+    TYPE_URI = "http://erlangen-crm.org/current/E63_Beginning_of_Existence"

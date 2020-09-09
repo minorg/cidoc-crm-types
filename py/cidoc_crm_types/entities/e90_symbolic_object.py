@@ -1,7 +1,6 @@
 from .e28_conceptual_object import E28ConceptualObject
 from .e72_legal_object import E72LegalObject
 from dataclasses import dataclass
-from typing import Tuple
 
 
 @dataclass
@@ -16,21 +15,17 @@ In some cases, the content of an instance of E90 Symbolic Object may completely 
 
 
 Examples:
-- ?ecognizabl?
-- The ?no-smoking? sign (E36)
-- ?BM000038850.JPG? (E41)
+- &#8216;ecognizabl&#8217;
+- The &#8220;no-smoking&#8221; sign (E36)
+- &#8220;BM000038850.JPG&#8221; (E41)
 - image BM000038850.JPG from the Clayton Herbarium in London (E36)
-- The distribution of form, tone and colour found on Leonardo da Vinci?s painting named ?Mona Lisa? in daylight (E36)
-- The Italian text of Dante?s ?Divina Commedia? as found in the authoritative critical edition La Commedia secondo l?antica vulgata a cura di Giorgio Petrocchi, Milano: Mondadori, 1966-67 (= Le Opere di Dante Alighieri, Edizione Nazionale a cura della Societ? Dantesca Italiana, VII, 1-4) (E33)
+- The distribution of form, tone and colour found on Leonardo da Vinci&#8217;s painting named &#8220;Mona Lisa&#8221; in daylight (E36)
+- The Italian text of Dante&#8217;s &#8220;Divina Commedia&#8221; as found in the authoritative critical edition La Commedia secondo l&#8217;antica vulgata a cura di Giorgio Petrocchi, Milano: Mondadori, 1966-67 (= Le Opere di Dante Alighieri, Edizione Nazionale a cura della Societ&#224; Dantesca Italiana, VII, 1-4) (E33)
 
 
 In First Order Logic:
-E90(x) ? E28(x)
-E90(x) ? E72(x)
+E90(x) &#8835; E28(x)
+E90(x) &#8835; E72(x)
     """
 
-    P106_forms_part_of: Tuple[object, ...] = ()  # Range: E90SymbolicObject
-    P106_is_composed_of: Tuple[object, ...] = ()  # Range: E90SymbolicObject
-    P165i_is_incorporated_in: Tuple[object, ...] = ()  # Range: E1CRMEntity
-    P190_has_symbolic_content: Tuple[object, ...] = ()  # Range: object
-    _typename: str = 'E90SymbolicObject'
+    TYPE_URI = "http://erlangen-crm.org/current/E90_Symbolic_Object"
