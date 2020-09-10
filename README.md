@@ -1,12 +1,12 @@
 # Python type definitions for the [CIDOC CRM](http://www.cidoc-crm.org/)
 
-This repository contains Python `@dataclass` types generated from the [Erlangen CRM / OWL](http://erlangen-crm.org/) implementation of the CIDOC CRM.
+This repository contains Python 3 `@dataclass` types generated from the [Erlangen CRM / OWL](http://erlangen-crm.org/) implementation of the CIDOC CRM.
 
 ## Structure of the repository
 
 * `circleci/`: [CircleCI](https://circleci.com/) Continuous Integration configuration
-* `generator/`: scripts for generating type definitions
-* `py/`: Python type definitions
+* `generator/`: Python 3 scripts for generating type definitions
+* `py/`: Python 3 type definitions
 
 ## Generator
 
@@ -25,8 +25,8 @@ This repository contains Python `@dataclass` types generated from the [Erlangen 
 
 The generator downloads the current version of the Erlangen CRM `.owl` and then translates it. The command line program accepts various options; run it with `-h` to list them.
 
-## Generated Python
+## Generated Python 3
 
-The generated Python code in `py/` consists of a top-level module, `cidoc_crm_types`, with submodules for `entities` (the E1 entity class hierarchy) and `properties` (the property class hierarchy).
+The generated Python 3 code in `py/` consists of a top-level module, `cidoc_crm_types`, with submodules for `entities` (the E1 entity class hierarchy) and `properties` (the property class hierarchy).
 
-The generated code has no dependencies outside the Python standard library, but requires Python 3.7+ for `@dataclass`.
+The generated code has no dependencies outside the Python 3 standard library, but requires Python 3.7+ for `@dataclass`.
